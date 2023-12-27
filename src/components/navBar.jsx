@@ -16,13 +16,13 @@ export const NavBarFormulaOne = () => (
     </NavbarBrand>
     <NavbarContent className='hidden sm:flex gap-4' justify='center'>
       <NavbarItem>
-        <Link color='foreground' href='#'>Circuits</Link>
-      </NavbarItem>
-      <NavbarItem isActive>
-        <Link href='#' aria-current='page'>Constructors</Link>
+        <Link color='foreground' href='drivers'>Drivers</Link>
       </NavbarItem>
       <NavbarItem>
-        <Link color='foreground' href='#'>Drivers</Link>
+        <Link color='foreground' href='constructors'>Constructors</Link>
+      </NavbarItem>
+      <NavbarItem>
+        <Link color='foreground' href='circuits'>Circuits</Link>
       </NavbarItem>
     </NavbarContent>
     <NavbarContent justify='end'>

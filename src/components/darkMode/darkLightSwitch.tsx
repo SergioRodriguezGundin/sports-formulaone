@@ -6,7 +6,7 @@ import { SunIcon } from "./sunIcon";
 
 export type darkLightSwitchValue = 'dark' | 'light';
 
-export const $darkLightState = atom<darkLightSwitchValue>('light');
+export const $darkLightState = atom<darkLightSwitchValue>('dark');
 
 export const DarkLightSwitch = () => {
   return (
