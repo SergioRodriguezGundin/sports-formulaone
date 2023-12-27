@@ -3,6 +3,19 @@ import { NavBarFormulaOne } from '../components/navBar.jsx';
 import '../styles.css';
 ---
 
+<script>
+  import { $darkLightState } from '../components/darkMode/darkLightSwitch';
+  $darkLightState.subscribe((value) => {
+    if (value === 'dark') {
+      document.body.classList.remove('light');
+      document.body.classList.add('dark');
+    } else {
+      document.body.classList.remove('dark');
+      document.body.classList.add('light');
+    }
+  });
+</script>
+
 <html lang='en'>
   <head>
     <meta charset='utf-8' />
@@ -11,7 +24,7 @@ import '../styles.css';
     <meta name='generator' content={Astro.generator} />
     <title>Formula one fan site</title>
   </head>
-  <body class='dark text-foreground bg-background'>
+  <body class='light text-foreground bg-background'>
     <NavBarFormulaOne client:visible />
     <main class='flex flex-row justify-center align-start w-100'>
       <slot />

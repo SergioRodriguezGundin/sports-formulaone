@@ -1,12 +1,14 @@
-import React from "react";
+import { atom } from 'nanostores';
 
 import { Switch } from "@nextui-org/react";
 import { MoonIcon } from "./moonIcon";
 import { SunIcon } from "./sunIcon";
 
-export const DarkLightSwitch = () => {
-  const [isSelected, setIsSelected] = React.useState(true);
+export type darkLightSwitchValue = 'dark' | 'light';
 
+export const $darkLightState = atom<darkLightSwitchValue>('light');
+
+export const DarkLightSwitch = () => {
   return (
     <Switch
       defaultSelected
@@ -14,12 +16,14 @@ export const DarkLightSwitch = () => {
       color="primary"
       thumbIcon={({ isSelected, className }) =>
         isSelected ? (
-          <SunIcon className={className} />
-        ) : (
           <MoonIcon className={className} />
+        ) : (
+          <SunIcon className={className} />
         )
       }
-      onChange={() => setIsSelected(!isSelected)}
+      onValueChange={(value) => {
+        $darkLightState.set(value ? 'dark' : 'light');
+      }}
     >
     </Switch>
   );
