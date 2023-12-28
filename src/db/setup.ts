@@ -1,4 +1,4 @@
-const API_KEY = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+const API_KEY = import.meta.env.API_KEY;
 
 export const getRequestOptions = () => {
   const headers = new Headers();
