@@ -31,7 +31,7 @@ Astro F1 Explorer is a web application built with [Astro](https://astro.build/) 
    git clone https://github.com/yourusername/astro-f1-explorer.git
    
 2. Replace your API key:
-   API_KEY = 'xxxxxxxxxxxxxxxxxxxxx'
+   Create your .env in the root folder and set API_KEY variable
    
 3. install dependencies
    ```bash
