@@ -1,11 +1,24 @@
 ---
 import Home from '../layouts/home.astro';
+import { Circuit } from '../components/circuits/circuit.tsx';
+
+import { GET } from './api/circuits.js';
+
+let response = await GET();
+const circuits = await response.json();
 ---
 
 <Home>
   <section class='page'>
-    <h1 class='text-4xl font-bold'>Circuits page</h1>
+    <h1 class='text-4xl font-bold'>Circuits</h1>
+    <div
+      class='flex flex-row justify-center align-center gap-8 flex-wrap mt-12'
+    >
+      {
+        circuits.map((circuit: any) => (
+          <Circuit circuit={circuit} client:visible />
+        ))
+      }
+    </div>
   </section>
 </Home>
-
-<style></style>

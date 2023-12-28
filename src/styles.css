@@ -33,11 +33,7 @@
 }
 
 body {
-  height: 100dvh;
-}
-
-main {
-  height: calc(100dvh - 64px);
+  min-height: 100dvh;
 }
 
 .page {
