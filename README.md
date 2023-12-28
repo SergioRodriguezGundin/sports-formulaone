@@ -4,7 +4,7 @@ Welcome to Astro F1 Explorer, your go-to app for exploring the thrilling world o
 
 ## Overview
 
-Astro F1 Explorer is a web application built with [Astro](https://astro.build/) and [NextUI](https://nextui.org/), designed to provide Formula One enthusiasts with information about teams, drivers, circuits, and the latest news. The app leverages the [SPORTS Formula One API](https://example-api.com/formula-one) to deliver real-time data and insights.
+Astro F1 Explorer is a web application built with [Astro](https://astro.build/) and [NextUI](https://nextui.org/), designed to provide Formula One enthusiasts with information about teams, drivers, circuits, and the latest news. The app leverages the [SPORTS Formula One API](https://api-sports.io/documentation/formula-1/v1#section/Introduction) to deliver real-time data and insights.
 
 ## Features
 
@@ -22,7 +22,7 @@ Astro F1 Explorer is a web application built with [Astro](https://astro.build/) 
 
 - [NextUI](https://nextui.org/): A UI library for Astro, providing a set of elegant and customizable components.
 
-- [SPORTS Formula One API](https://example-api.com/formula-one): The API powering real-time Formula One data.
+- [SPORTS Formula One API](https://api-sports.io/documentation/formula-1/v1#section/Introduction): The API powering real-time Formula One data.
 
 ## Getting Started
 
