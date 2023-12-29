@@ -5,10 +5,12 @@ export interface INews {
   image: string;
 }
 
-export const New = ({ f1_new }: { f1_new: INews }) => (
+export const New = ({ f1_new, index }: { f1_new: INews; index: number }) => (
   <Card
     isFooterBlurred
-    className='col-span-12 sm:col-span-6 h-[300px]'
+    key={index}
+    className={`row-span-1 rounded-xl border-2 border-slate-400/10 bg-neutral-100 dark:bg-neutral-900 h-[300px] ${index === 3 || index === 6 ? "col-span-2" : ""
+      }`}
   >
     <CardHeader className=' backdrop-blur-sm absolute z-10 bottom-0 flex-col items-start bg-background/80'>
       <p className='text-tiny text-primary uppercase font-bold'>

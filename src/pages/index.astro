@@ -10,8 +10,14 @@ const news: INews[] = await response.json();
 
 <Home>
   <section class='page'>
-    <div class='max-w-[1024px] gap-4 grid grid-cols-12 grid-rows-2 px-8'>
-      {news.map((f1_new) => <New f1_new={f1_new} client:visible />)}
+    <div
+      class='grid grid-cols-3 grid-rows-2 auto-rows-[192px] gap-4 max-w-[1024px]'
+    >
+      {
+        news.map((f1_new, index) => (
+          <New f1_new={f1_new} index={index} client:visible />
+        ))
+      }
     </div>
   </section>
 </Home>
