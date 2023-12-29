@@ -12,8 +12,6 @@ export async function GET() {
 
   const data = await response.json();
 
-  console.log('🚀 ~ file: teams.ts:14 ~ GET ~ teams:', data?.response)
-
   return new Response(
     JSON.stringify(data?.response), {
     status: 200,

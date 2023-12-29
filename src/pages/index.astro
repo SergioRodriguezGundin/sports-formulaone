@@ -1,11 +1,18 @@
 ---
 import Home from '../layouts/home.astro';
+import { New, type INews } from '../components/news/new';
+
+import { GET } from './api/news.js';
+
+let response = await GET();
+const news: INews[] = await response.json();
 ---
 
 <Home>
   <section class='page'>
-    <h1 class='text-4xl font-bold'>Hello, F1 world!</h1>
-    <p class='text-lg'>This is a static site built with Astro.</p>
+    <div class='max-w-[1024px] gap-4 grid grid-cols-12 grid-rows-2 px-8'>
+      {news.map((f1_new) => <New f1_new={f1_new} client:visible />)}
+    </div>
   </section>
 </Home>
 
