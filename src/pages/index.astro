@@ -1,24 +1,11 @@
 ---
 import Home from '../layouts/home.astro';
-import { New, type INews } from '../components/news/new';
-
-import { GET } from './api/news.js';
-
-let response = await GET();
-const news: INews[] = await response.json();
+import NewsList from '../components/news/newsList.astro';
 ---
 
 <Home>
   <section class='page'>
-    <div
-      class='grid grid-cols-3 grid-rows-2 auto-rows-[192px] gap-4 max-w-[1024px]'
-    >
-      {
-        news.map((f1_new, index) => (
-          <New f1_new={f1_new} index={index} client:visible />
-        ))
-      }
-    </div>
+    <NewsList />
   </section>
 </Home>
 

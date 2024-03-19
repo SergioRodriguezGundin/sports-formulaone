@@ -1,20 +1,11 @@
 ---
 import Home from '../layouts/home.astro';
-
-import { GET } from './api/teams.js';
-import { Team } from '../components/teams/team';
-
-let response = await GET();
-const teams = await response.json();
+import TeamsList from '../components/teams/teamsList.astro';
 ---
 
 <Home>
   <section class='page'>
     <h1 class='text-4xl font-bold'>Teams</h1>
-    <div
-      class='flex flex-row justify-center align-center gap-8 flex-wrap mt-12'
-    >
-      {teams.map((team: any) => <Team team={team} client:visible />)}
-    </div>
+    <TeamsList />
   </section>
 </Home>
