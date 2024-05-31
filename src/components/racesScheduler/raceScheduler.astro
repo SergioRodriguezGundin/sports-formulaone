@@ -1,0 +1,169 @@
+---
+const races = [
+  {
+    name: 'AlbertPark',
+    date: '2021-03-28',
+    time: '06:00:00',
+    location: 'Melbourne, Australia',
+  },
+  {
+    name: 'Imola',
+    date: '2021-04-18',
+    time: '13:00:00',
+    location: 'Imola, Italy',
+  },
+  {
+    name: 'Portimao',
+    date: '2021-05-02',
+    time: '13:00:00',
+    location: 'Portimao, Portugal',
+  },
+  {
+    name: 'Barcelona',
+    date: '2021-05-09',
+    time: '13:00:00',
+    location: 'Barcelona, Spain',
+  },
+  {
+    name: 'Monaco',
+    date: '2021-05-23',
+    time: '13:00:00',
+    location: 'Monte Carlo, Monaco',
+  },
+  {
+    name: 'Baku',
+    date: '2021-06-06',
+    time: '13:00:00',
+    location: 'Baku, Azerbaijan',
+  },
+  {
+    name: 'Montreal',
+    date: '2021-06-13',
+    time: '19:00:00',
+    location: 'Montreal, Canada',
+  },
+  {
+    name: 'PaulRicard',
+    date: '2021-06-27',
+    time: '13:00:00',
+    location: 'Le Castellet, France',
+  },
+  {
+    name: 'Spielberg',
+    date: '2021-07-04',
+    time: '13:00:00',
+    location: 'Spielberg, Austria',
+  },
+  {
+    name: 'Silverstone',
+    date: '2021-07-18',
+    time: '13:00:00',
+    location: 'Silverstone, United Kingdom',
+  },
+  {
+    name: 'Budapest',
+    date: '2021-08-01',
+    time: '13:00:00',
+    location: 'Budapest, Hungary',
+  },
+  {
+    name: 'Spa',
+    date: '2021-08-29',
+    time: '13:00:00',
+    location: 'Stavelot, Belgium',
+  },
+  {
+    name: 'Zandvoort',
+    date: '2021-09-05',
+    time: '13:00:00',
+    location: 'Zandvoort, Netherlands',
+  },
+];
+---
+
+<section class='races-scheduler'>
+  <div class='races-scheduler-scrollcontainer'>
+    {
+      races.map((race, index) => (
+        <button
+          id={`race-${index}`}
+          class='race'
+          style={{ '--race-index': index }}
+        >
+          <h2 class='text-xl text-black'>{race.name}</h2>
+          <p class='text-sm text-primary'>{race.location}</p>
+        </button>
+      ))
+    }
+  </div>
+</section>
+
+<script>
+  const buttons = document.querySelectorAll('button.race');
+
+  buttons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+      console.log(`Race with index ${index} clicked`);
+    });
+  });
+</script>
+
+<style>
+  .races-scheduler {
+    background-color: rgb(164, 80, 80);
+    border-radius: 12px;
+
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 44rem;
+  }
+
+  .races-scheduler-scrollcontainer {
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    margin: 0 1.5rem 1.5rem 1.5rem;
+
+    position: absolute;
+    bottom: 0;
+    width: 95%;
+  }
+
+  .races-scheduler-scrollcontainer .race {
+    view-timeline-name: --revealing-race;
+    view-timeline-axis: x;
+
+    animation: reveal linear;
+    animation-timeline: --revealing-race;
+    animation-range: cover 0% cover 60%;
+  }
+
+  .race {
+    scroll-snap-align: center;
+    flex: 0 0 160px;
+
+    background-color: rgba(255, 255, 255);
+    border: 1px solid black;
+    border-radius: 6px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 220px;
+  }
+
+  @keyframes reveal {
+    from {
+      opacity: 0;
+      transform: scale(0.85);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+</style>

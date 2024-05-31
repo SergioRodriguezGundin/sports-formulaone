@@ -13,10 +13,10 @@ export const New = ({ f1_new, index }: { f1_new: INews; index: number }) => (
       }`}
   >
     <CardHeader className=' backdrop-blur-sm absolute z-10 bottom-0 flex-col items-start bg-background/80'>
-      <p className='text-tiny text-primary uppercase font-bold'>
+      <span className='text-primary text-sm font-bold uppercase'>
         F1 unlocked
-      </p>
-      <h4 className='text-color/90 font-medium text-ml mt-2'>{f1_new.title}</h4>
+      </span>
+      <p className='text-color/90 font-normal text-xs mt-2'>{f1_new.title}</p>
     </CardHeader>
     <Image
       removeWrapper

@@ -29,7 +29,7 @@ export const NavBarFormulaOne = () => {
           className="sm:hidden"
         />
         <NavbarBrand>
-          <FormulaOneLogo />
+        <Link href='/'><FormulaOneLogo /></Link>
         </NavbarBrand>
       </NavbarContent>
 

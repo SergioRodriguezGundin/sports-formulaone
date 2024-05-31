@@ -1,0 +1,27 @@
+---
+import { getRequestOptions } from '../../db/setup';
+import { LeaderBoardList } from './leaderBoardList';
+
+let driversStanding: any = [];
+const driversStandingResponse = await fetch(
+  'https://v1.formula-1.api-sports.io/rankings/drivers?season=2024',
+  getRequestOptions()
+);
+const fullResponse = await driversStandingResponse.json();
+driversStanding = fullResponse.response;
+
+let teamsStanding: any[] = [];
+const teamsStandingResponse = await fetch(
+  'https://v1.formula-1.api-sports.io/rankings/teams?season=2024',
+  getRequestOptions()
+);
+const fullResponseTeams = await teamsStandingResponse.json();
+teamsStanding = fullResponseTeams.response;
+---
+
+<article class='flex-1'>
+  <LeaderBoardList
+    client:visible
+    boards={{ drivers: driversStanding, teams: teamsStanding }}
+  />
+</article>
