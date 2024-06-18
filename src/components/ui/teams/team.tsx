@@ -6,9 +6,11 @@ export const Team = ({ team }: { team: any }) => (
       className='pb-0 pt-2 px-4 flex-col items-start'
     >
       <h4 className='font-bold text-large'>{team.name}</h4>
-      <p className='text-tiny uppercase font-bold text-primary'>{team.engine}</p>
       <small className='text-default-500 mt-4'>
-        {team.base}
+        Position: {team.position}
+      </small>
+      <small className='text-default-500 mt-4'>
+        Points: {team.points}
       </small>
     </CardHeader>
     <CardBody className='overflow-visible py-2 flex justify-center items-center' >
@@ -17,7 +19,7 @@ export const Team = ({ team }: { team: any }) => (
         height={180}
         alt='formula one team'
         className='object-cover rounded-xl'
-        src={team.logo}
+        src={team?.image}
       />
     </CardBody>
   </Card>

@@ -1,7 +1,12 @@
 ---
+import { API_URL } from 'astro:env/server';
+import { Team } from './team';
 
+const URL = `${API_URL}/teams`;
+const response = await fetch(URL);
+const teams = await response.json();
 ---
 
-<!--<div class='flex flex-row justify-center align-center gap-8 flex-wrap mt-12'>
+<div class='flex flex-row justify-center align-center gap-8 flex-wrap mt-12'>
   {teams.map((team: any) => <Team team={team} client:visible />)}
-</div>-->
+</div>
