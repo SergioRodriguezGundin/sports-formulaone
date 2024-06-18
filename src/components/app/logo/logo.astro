@@ -1,0 +1,16 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../../../assets/f1logo.webp';
+
+const width = 120;
+const height = 60;
+---
+
+<Image
+  src={logo}
+  width={width}
+  height={height}
+  decoding='async'
+  loading='lazy'
+  alt='f1 logo'
+/>

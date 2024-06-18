@@ -4,7 +4,7 @@ import '../styles.css';
 ---
 
 <script>
-  import { $darkLightState } from '../components/darkMode/darkLightSwitch';
+  import { $darkLightState } from '../components/app/dark-mode/dark-mode-switch';
   $darkLightState.subscribe((value) => {
     if (value === 'dark') {
       document.body.classList.remove('light');

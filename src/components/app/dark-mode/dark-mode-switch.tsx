@@ -1,14 +1,14 @@
 import { atom } from 'nanostores';
 
 import { Switch } from "@nextui-org/react";
-import { MoonIcon } from "./moonIcon";
-import { SunIcon } from "./sunIcon";
+import { MoonIcon } from "./moon-icon";
+import { SunIcon } from "./sun-icon";
 
 export type darkLightSwitchValue = 'dark' | 'light';
 
 export const $darkLightState = atom<darkLightSwitchValue>('dark');
 
-export const DarkLightSwitch = () => (
+export const DarkModeSwitch = () => (
   <Switch
     defaultSelected
     size="md"

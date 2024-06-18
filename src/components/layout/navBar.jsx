@@ -9,8 +9,8 @@ import {
   NavbarMenuItem,
   NavbarMenuToggle,
 } from '@nextui-org/react';
-import { FormulaOneLogo } from '../formulaOneLogo/formulaOneLogo';
-import { DarkLightSwitch } from '../darkMode/darkLightSwitch';
+import { Logo } from '../app/logo/logo';
+import { DarkModeSwitch } from '../app/dark-mode/dark-mode-switch';
 
 export const NavBarFormulaOne = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -29,7 +29,7 @@ export const NavBarFormulaOne = () => {
           className="sm:hidden"
         />
         <NavbarBrand>
-        <Link href='/'><FormulaOneLogo /></Link>
+        <Link href='/'><Logo /></Link>
         </NavbarBrand>
       </NavbarContent>
 
@@ -46,7 +46,7 @@ export const NavBarFormulaOne = () => {
       </NavbarContent>
       <NavbarContent justify='end'>
         <NavbarItem className='lg:flex'>
-          <DarkLightSwitch />
+          <DarkModeSwitch />
         </NavbarItem>
       </NavbarContent>
       
