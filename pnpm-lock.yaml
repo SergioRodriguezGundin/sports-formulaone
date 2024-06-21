@@ -38,6 +38,9 @@ importers:
       react-dom:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
+      react-flagpack:
+        specifier: ^1.2.0
+        version: 1.2.0(react@18.2.0)
 
 packages:
 
@@ -2517,6 +2520,11 @@ packages:
     resolution: {integrity: sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==}
     peerDependencies:
       react: ^18.2.0
+
+  react-flagpack@1.2.0:
+    resolution: {integrity: sha512-qGhnBGg9lCHQ7AKu5wZ0pTvPACz0opLa0+hJ6zj9805jI016YjE8ggAj269GaIG/wyelmX/Qph/SWQecm0RFrQ==}
+    peerDependencies:
+      react: ^16.8.* || ^17.*
 
   react-refresh@0.14.0:
     resolution: {integrity: sha512-wViHqhAd8OHeLS/IRMJjTSDHF3U9eWi62F/MledQGPdJGDhodXJ9PBLNGr6WWL7qlH12Mt3TyTpbS+hGXMjCzQ==}
@@ -5068,7 +5076,7 @@ snapshots:
 
   '@swc/helpers@0.4.14':
     dependencies:
-      tslib: 2.6.2
+      tslib: 2.6.3
 
   '@swc/helpers@0.4.36':
     dependencies:
@@ -6457,6 +6465,10 @@ snapshots:
       loose-envify: 1.4.0
       react: 18.2.0
       scheduler: 0.23.0
+
+  react-flagpack@1.2.0(react@18.2.0):
+    dependencies:
+      react: 18.2.0
 
   react-refresh@0.14.0: {}
 

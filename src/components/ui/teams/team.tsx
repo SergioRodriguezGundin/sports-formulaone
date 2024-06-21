@@ -1,25 +1,29 @@
 import { Card, CardHeader, CardBody, Image } from '@nextui-org/react';
 
 export const Team = ({ team }: { team: any }) => (
-  <Card className='py-4 bg-default-50 w-[320px] h-[380px]' isHoverable >
-    <CardHeader
-      className='pb-0 pt-2 px-4 flex-col items-start'
-    >
-      <h4 className='font-bold text-large'>{team.name}</h4>
-      <small className='text-default-500 mt-4'>
-        Position: {team.position}
-      </small>
-      <small className='text-default-500 mt-4'>
-        Points: {team.points}
-      </small>
+  <Card className='py-4 bg-default-50 w-[380px] sm:w-[560px] h-[200px]' isHoverable >
+    <CardHeader className="flex gap-3">
+      <Image
+        alt="formula one team icon"
+        radius="sm"
+        src={team?.icon}
+        width={40}
+        height={40}
+        className="bg-white"
+      />
+      <div className="flex flex-col">
+        <p className="text-md">{team.name}</p>
+        <p className="text-small text-default-500">{team.points} points</p>
+      </div>
     </CardHeader>
+
     <CardBody className='overflow-visible py-2 flex justify-center items-center' >
       <Image
         width={220}
         height={180}
         alt='formula one team'
         className='object-cover rounded-xl'
-        src={team?.image}
+        src={team?.car}
       />
     </CardBody>
   </Card>
