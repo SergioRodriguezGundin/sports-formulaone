@@ -1,101 +1,24 @@
 ---
-const races = [
-  {
-    name: 'AlbertPark',
-    date: '2021-03-28',
-    time: '06:00:00',
-    location: 'Melbourne, Australia',
-  },
-  {
-    name: 'Imola',
-    date: '2021-04-18',
-    time: '13:00:00',
-    location: 'Imola, Italy',
-  },
-  {
-    name: 'Portimao',
-    date: '2021-05-02',
-    time: '13:00:00',
-    location: 'Portimao, Portugal',
-  },
-  {
-    name: 'Barcelona',
-    date: '2021-05-09',
-    time: '13:00:00',
-    location: 'Barcelona, Spain',
-  },
-  {
-    name: 'Monaco',
-    date: '2021-05-23',
-    time: '13:00:00',
-    location: 'Monte Carlo, Monaco',
-  },
-  {
-    name: 'Baku',
-    date: '2021-06-06',
-    time: '13:00:00',
-    location: 'Baku, Azerbaijan',
-  },
-  {
-    name: 'Montreal',
-    date: '2021-06-13',
-    time: '19:00:00',
-    location: 'Montreal, Canada',
-  },
-  {
-    name: 'PaulRicard',
-    date: '2021-06-27',
-    time: '13:00:00',
-    location: 'Le Castellet, France',
-  },
-  {
-    name: 'Spielberg',
-    date: '2021-07-04',
-    time: '13:00:00',
-    location: 'Spielberg, Austria',
-  },
-  {
-    name: 'Silverstone',
-    date: '2021-07-18',
-    time: '13:00:00',
-    location: 'Silverstone, United Kingdom',
-  },
-  {
-    name: 'Budapest',
-    date: '2021-08-01',
-    time: '13:00:00',
-    location: 'Budapest, Hungary',
-  },
-  {
-    name: 'Spa',
-    date: '2021-08-29',
-    time: '13:00:00',
-    location: 'Stavelot, Belgium',
-  },
-  {
-    name: 'Zandvoort',
-    date: '2021-09-05',
-    time: '13:00:00',
-    location: 'Zandvoort, Netherlands',
-  },
-];
+import { ScheduleAPI } from '../../../api/endpoints/schedule';
+
+const schedule = await ScheduleAPI.getSchedule();
 ---
 
 <section class='races-scheduler'>
-  <div class='races-scheduler-scrollcontainer'>
+  <!--<div class='races-scheduler-scrollcontainer'>
     {
-      races.map((race, index) => (
+      schedule.map((schedule: any, index: number) => (
         <button
           id={`race-${index}`}
           class='race'
           style={{ '--race-index': index }}
         >
-          <h2 class='text-xl text-black'>{race.name}</h2>
-          <p class='text-sm text-primary'>{race.location}</p>
+          <h2 class='text-xl text-black'>{schedule.name}</h2>
+          <p class='text-sm text-primary'>{schedule.location}</p>
         </button>
       ))
     }
-  </div>
+  </div>-->
 </section>
 
 <script>

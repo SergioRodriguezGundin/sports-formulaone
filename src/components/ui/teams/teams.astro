@@ -1,10 +1,8 @@
 ---
-import { API_URL } from 'astro:env/server';
+import { TeamsAPI } from '../../../api/endpoints/teams';
 import { Team } from './team';
 
-const URL = `${API_URL}/teams`;
-const response = await fetch(URL);
-const teams = await response.json();
+const teams = await TeamsAPI.getTeams();
 ---
 
 <div class='flex flex-row justify-center align-center gap-8 flex-wrap mt-12'>
