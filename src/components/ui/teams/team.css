@@ -1,0 +1,9 @@
+.team-gradient {
+  position: absolute;
+  top: -24px;
+  bottom: 0;
+  left: 265px;
+  transform: rotateZ(17deg);
+  width: 100%;
+  height: 306px;
+}
