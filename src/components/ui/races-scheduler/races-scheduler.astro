@@ -1,24 +1,25 @@
 ---
 import { ScheduleAPI } from '../../../api/endpoints/schedule';
+import type { ScheduleInterface } from '../../../api/interfaces/schedule.interface';
 
-const schedule = await ScheduleAPI.getSchedule();
+const schedule: ScheduleInterface[] = await ScheduleAPI.getSchedule();
 ---
 
 <section class='races-scheduler'>
-  <!--<div class='races-scheduler-scrollcontainer'>
+  <div class='races-scheduler-scrollcontainer'>
     {
-      schedule.map((schedule: any, index: number) => (
+      schedule.map((schedule: ScheduleInterface, index: number) => (
         <button
           id={`race-${index}`}
           class='race'
           style={{ '--race-index': index }}
         >
-          <h2 class='text-xl text-black'>{schedule.name}</h2>
-          <p class='text-sm text-primary'>{schedule.location}</p>
+          <h2 class='text-xl text-black'>{schedule.title}</h2>
+          <p class='text-sm text-primary'>{schedule.place}</p>
         </button>
       ))
     }
-  </div>-->
+  </div>
 </section>
 
 <script>
