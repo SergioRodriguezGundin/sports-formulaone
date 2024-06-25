@@ -18,12 +18,13 @@ export const Team = ({ team }: { team: any }) => {
       <CardHeader className="flex gap-3 p-5">
         <div className="flex flex-row justify-start items-center gap-2 w-full">
           <Image
-            alt="formula one team icon"
-            radius="sm"
             src={team?.icon}
+            radius="sm"
             width={40}
             height={40}
+            disableSkeleton={true}
             className="bg-white"
+            alt="formula one team icon"
           />
           <p className="text-md">{team.name}</p>
         </div>
@@ -37,11 +38,12 @@ export const Team = ({ team }: { team: any }) => {
       </CardHeader>
       <CardBody className='flex justify-center items-center overflow-visible ' >
         <Image
+          src={team?.car}
+          radius="sm"
           width={220}
           height={180}
+          disableSkeleton={true}
           alt='formula one team'
-          className='object-cover rounded-xl'
-          src={team?.car}
         />
       </CardBody>
     </Card>
