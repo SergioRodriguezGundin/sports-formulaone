@@ -1,22 +1,8 @@
 
-import { useEffect, useState } from 'react';
-import { DriversAPI } from '../../../../api/endpoints/drivers';
-import DriverLeaderBoardListItem from './driver-leaderboard-list-item';
 import type { DriverDB } from '../../../../api/interfaces/driver.interface';
+import DriverLeaderBoardListItem from './driver-leaderboard-list-item';
 
-export const DriversLeaderboardList = () => {
-  const [drivers, setDrivers] = useState<DriverDB[]>([]);
-
-  useEffect(() => {
-    const fetchDrivers = async () => {
-      const driversData: DriverDB[] = await DriversAPI.getDrivers();
-      console.log(driversData);
-      setDrivers(driversData);
-    };
-
-    fetchDrivers();
-  }, []);
-
+export const DriversLeaderboardList = ({ drivers }: { drivers: DriverDB[] }) => {
   return (
     <div className='flex flex-col justify-start items-start gap-2'>
       {drivers.map((driver) => <DriverLeaderBoardListItem driver={driver} />)}
