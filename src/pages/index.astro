@@ -1,10 +1,12 @@
 ---
 import { DriversAPI } from '../api/endpoints/drivers';
+import { ScheduleAPI } from '../api/endpoints/schedule';
 import { TeamsAPI } from '../api/endpoints/teams';
 import F1Tabs from '../components/layout/tabs';
-import RaceScheduler from '../components/ui/races-scheduler/races-scheduler.astro';
+import RacesSchedule from '../components/ui/races-scheduler/races-scheduler';
 import Home from '../layouts/home.astro';
 
+const schedule = await ScheduleAPI.getSchedule();
 const drivers = await DriversAPI.getDrivers();
 const teams = await TeamsAPI.getTeams();
 
@@ -28,7 +30,7 @@ const tabs = [
   <section class='page w-[100%]'>
     <div class='flex flex-row justify-start align-start gap-4 w-[100%]'>
       <div class='flex-[5]'>
-        <RaceScheduler />
+        <RacesSchedule schedule={schedule} client:load />
       </div>
       <div class='flex-[2]'>
         <F1Tabs tabs={tabs} client:load />
