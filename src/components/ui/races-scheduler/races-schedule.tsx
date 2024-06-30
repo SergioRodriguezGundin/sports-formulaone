@@ -47,9 +47,9 @@ export default function RacesSchedule({ schedule }: { schedule: ScheduleInterfac
                   shadow="md"
                   src={scheduleSelected?.country_flag}
                 />
-                <p className="text-primary text-sm font-bold uppercase">{scheduleSelected?.place}</p>
+                <h3 className="text-primary text-xl font-bold uppercase">{scheduleSelected?.place}</h3>
               </div>
-              <h4 className="text-white">{scheduleSelected?.title}</h4>
+              <h4 className="text-sm">{scheduleSelected?.title}</h4>
             </div>
           </div>
         </CardHeader>

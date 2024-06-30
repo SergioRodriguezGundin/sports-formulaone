@@ -1,9 +1,6 @@
 .race {
   scroll-snap-align: center;
   flex: 0 0 250px;
-
-  background-color: rgba(255, 255, 255);
-  border: 1px solid black;
   border-radius: 6px;
 
   display: flex;
@@ -18,6 +15,14 @@
   animation: reveal linear;
   animation-timeline: --revealing-race;
   animation-range: cover 0% cover 60%;
+}
+
+.raceImage {
+  filter: brightness(0.6);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
 }
 
 @keyframes reveal {

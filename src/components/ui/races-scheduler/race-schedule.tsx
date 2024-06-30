@@ -11,8 +11,11 @@ export const RaceSchedule = ({ raceSchedule, index }: { raceSchedule: ScheduleIn
         setScheduleSelected(raceSchedule);
       }}
     >
-      <h2 className='text-xl text-black'>{raceSchedule.title}</h2>
-      <p className='text-sm text-primary'>{raceSchedule.place}</p>
+      <img src={raceSchedule.hero_image} alt={raceSchedule.place + 'track'} className={styles.raceImage} />
+      <div className="absolute">
+        <p className='text-lg font-bold text-white'>{raceSchedule.place}</p>
+        <span className='text-sm'>{raceSchedule.year}</span>
+      </div>
     </button>
   )
 }
