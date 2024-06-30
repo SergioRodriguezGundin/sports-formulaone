@@ -17,8 +17,7 @@ export const NavBarFormulaOne = () => {
 
   const menuItems = [
     "Drivers",
-    "Constructors",
-    "Circuits",
+    "Teams",
   ];
 
   return (
@@ -29,7 +28,7 @@ export const NavBarFormulaOne = () => {
           className="sm:hidden"
         />
         <NavbarBrand>
-        <Link href='/'><Logo /></Link>
+          <Link href='/'><Logo /></Link>
         </NavbarBrand>
       </NavbarContent>
 
@@ -38,10 +37,10 @@ export const NavBarFormulaOne = () => {
           <Link color='foreground' href='season'>Current season</Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color='foreground' href='teams'>Teams</Link>
+          <Link color='foreground' href='drivers'>Drivers</Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color='foreground' href='circuits'>Circuits</Link>
+          <Link color='foreground' href='teams'>Teams</Link>
         </NavbarItem>
       </NavbarContent>
       <NavbarContent justify='end'>
@@ -49,7 +48,7 @@ export const NavBarFormulaOne = () => {
           <DarkModeSwitch />
         </NavbarItem>
       </NavbarContent>
-      
+
       <NavbarMenu>
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
