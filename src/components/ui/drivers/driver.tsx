@@ -17,8 +17,19 @@ export const Driver = ({ driver }: { driver: DriverInterface }) => {
         }}
       />
       <CardHeader className="flex gap-3 p-5">
-        <div className='flex flex-col gap-2 justify-center items-start'>
-          <p className="text-md">{driver.name}</p>
+        <div className='flex flex-col gap-2 justify-center items-start w-[100%]'>
+          <div className='flex flex-row justify-between items-center gap-1 w-[100%]'>
+            <p className="text-md">{driver.name}</p>
+            <Image
+              src={driver.nationality}
+              radius="sm"
+              width={40}
+              height={28}
+              disableSkeleton={true}
+              alt={`driver ${driver.name} nationality `}
+            />
+          </div>
+          <Divider className='my-2' />
           <div className='flex flex-row justify-center items-center gap-2'>
             <span className='text-lg font-bold'>{driver.position}</span> <small className='text-secondary'>POS</small>
             <Divider orientation="vertical" />
