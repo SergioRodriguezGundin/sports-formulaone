@@ -1,8 +1,9 @@
 import { Card, CardHeader, CardBody, Image, Divider } from '@nextui-org/react';
 import { defaultTeamColor, teamColors, type TeamsColorsInterface } from '../../../lib/team-colors';
 import './team.css';
+import type { TeamInterface } from '../../../api/interfaces/team.interface';
 
-export const Team = ({ team }: { team: any }) => {
+export const Team = ({ team }: { team: TeamInterface }) => {
   const teamColor = teamColors.find(
     (teamColor: TeamsColorsInterface) => teamColor.team === team.name
   ) ?? defaultTeamColor;
@@ -18,7 +19,7 @@ export const Team = ({ team }: { team: any }) => {
       <CardHeader className="flex gap-3 p-5">
         <div className="flex flex-row justify-start items-center gap-2 w-full">
           <Image
-            src={team?.icon}
+            src={team?.icon ?? ''}
             radius="sm"
             width={40}
             height={40}
@@ -36,14 +37,14 @@ export const Team = ({ team }: { team: any }) => {
           </div>
         </div>
       </CardHeader>
-      <CardBody className='flex justify-center items-center overflow-visible ' >
+      <CardBody className='flex justify-center items-center overflow-visible' >
         <Image
           src={team?.car}
           radius="sm"
           width={220}
           height={180}
           disableSkeleton={true}
-          alt='formula one team'
+          alt={`formula one team ${team.name}`}
         />
       </CardBody>
     </Card>

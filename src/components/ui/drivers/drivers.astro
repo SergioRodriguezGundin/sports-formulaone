@@ -1,0 +1,15 @@
+---
+import { DriversAPI } from '../../../api/endpoints/drivers';
+import type { DriverInterface } from '../../../api/interfaces/driver.interface';
+import { Driver } from './driver';
+
+const drivers = await DriversAPI.getDrivers();
+---
+
+<div class='flex flex-row justify-center align-center gap-8 flex-wrap'>
+  {
+    drivers.map((driver: DriverInterface) => (
+      <Driver driver={driver} client:visible />
+    ))
+  }
+</div>

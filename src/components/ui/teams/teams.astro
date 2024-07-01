@@ -1,10 +1,11 @@
 ---
 import { TeamsAPI } from '../../../api/endpoints/teams';
+import type { TeamInterface } from '../../../api/interfaces/team.interface';
 import { Team } from './team';
 
 const teams = await TeamsAPI.getTeams();
 ---
 
 <div class='flex flex-row justify-center align-center gap-8 flex-wrap'>
-  {teams.map((team: any) => <Team team={team} client:visible />)}
+  {teams.map((team: TeamInterface) => <Team team={team} client:visible />)}
 </div>
